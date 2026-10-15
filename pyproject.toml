@@ -1,0 +1,17 @@
+[project]
+name = "my-agent"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "duckduckgo-mcp-server>=0.6.1",
+    "langchain>=1.4.3",
+    "langchain-deepseek>=1.1.1",
+    "langchain-mcp-adapters>=0.3.2",
+    "langchain-openai>=1.6.7",
+    "pyside6>=6.11.2",
+    "python-dotenv>=1.2.4",
+    "qasync>=0.28.0",
+]
+
+[tool.pyside6-project]
+files = ["form.ui", "login.ui", "mainwindow.py"]

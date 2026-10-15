@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@modelcontextprotocol/server-filesystem": "^1.0.0",
+    "weather-open-meteo-mcp": "^0.1.2"
+  }
+}
