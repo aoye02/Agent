@@ -149,7 +149,7 @@ QListWidget::item:hover {
         </property>
         <layout class="QVBoxLayout" name="verticalLayout" stretch="3,1">
          <item>
-          <widget class="QScrollArea" name="chatScroll">
+          <widget class="AutoScrollArea" name="chatScroll">
            <property name="widgetResizable">
             <bool>true</bool>
            </property>
@@ -408,6 +408,14 @@ QListWidget::item:hover {
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>AutoScrollArea</class>
+   <extends>QScrollArea</extends>
+   <header>scrollarea</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

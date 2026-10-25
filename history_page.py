@@ -34,4 +34,4 @@ class HistoryPage:
         """点历史对话，加载消息"""
         conv_id = item.data(Qt.UserRole)
         self.main.current_conv_id = conv_id
-        self.main.chat_page.load_conversation(conv_id)
+        QTimer.singleShot(10, lambda: self.main.chat_page.load_conversation(conv_id))

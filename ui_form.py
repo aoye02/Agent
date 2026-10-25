@@ -17,9 +17,11 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QLineEdit,
     QListWidget, QListWidgetItem, QMainWindow, QMenuBar,
-    QPushButton, QScrollArea, QSizePolicy, QSpacerItem,
-    QStackedWidget, QStatusBar, QTextEdit, QToolButton,
-    QVBoxLayout, QWidget)
+    QPushButton, QSizePolicy, QSpacerItem, QStackedWidget,
+    QStatusBar, QTextEdit, QToolButton, QVBoxLayout,
+    QWidget)
+
+from scrollarea import AutoScrollArea
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -118,7 +120,7 @@ class Ui_MainWindow(object):
         self.verticalLayout = QVBoxLayout(self.layoutWidget)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.chatScroll = QScrollArea(self.layoutWidget)
+        self.chatScroll = AutoScrollArea(self.layoutWidget)
         self.chatScroll.setObjectName(u"chatScroll")
         self.chatScroll.setWidgetResizable(True)
         self.chatContainer = QWidget()

@@ -86,8 +86,11 @@ CMakeLists.txt.user*
 # My_Define
 .venv/          #任意层级的 .venv 目录都忽略
 __pycache__/    #任意层级的 __pycache__ 目录都忽略
-.env            #任意层级的 .env 文件都忽略
+#任意层级的 .env 文件都忽略
+.env
 chat.db
+chat.db-shm
+chat.db-wal
 node_modules/
 *.db
 *.log

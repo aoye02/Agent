@@ -1,15 +1,14 @@
 # This Python file uses the following encoding: utf-8
+import os
 import sys
 import asyncio
 import qasync
 from PySide6.QtWidgets import QApplication, QMainWindow, QDialog
 from ui_form import Ui_MainWindow
 from agent import MyAgent
-# from bubble import Bubble, LoadingBubble
 from login import LoginDialog
 from database import Database
 from settings import SettingsPage
-# from worker import AgentWorker
 from sidebar import Sidebar
 from history_page import HistoryPage
 from chat_page import ChatPage
@@ -39,9 +38,9 @@ class MainWindow(QMainWindow):
     async def init_agent(self):
         """在事件循环启动后，异步初始化 MCP Agent"""
         try:
-            await self.agent.setup()
+            await self.agent.setup(self.db)
             print("Agent 初始化完成")
-            self.chat_page.on_reply("智能体初始化完成")
+            self.chat_page.add_bubble("智能体初始化完成",is_user=False)
         except Exception as e:
             print(f"Agent 初始化失败: {e}")
 
@@ -60,8 +59,9 @@ class MainWindow(QMainWindow):
         self.sidebar.update_sidebar_avatar(avatar_path)
 
     def closeEvent(self, event):
-        # self.chat_page.close()
-        event.accept()   # 直接接受关闭，不管线程
+        print("准备关闭软件...")
+        sys.stdout.flush()  # 确保控制台的日志都打印出来了
+        os._exit(0)         # 0 表示正常退出，直接杀掉所有 Python 线程和协程
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
